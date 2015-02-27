@@ -1,8 +1,8 @@
 <?php
 /**
- * {%= title %} Theme Customizer
+ * bootstrap_sass_s Theme Customizer
  *
- * @package {%= title %}
+ * @package bootstrap_sass_s
  */
 
 /**

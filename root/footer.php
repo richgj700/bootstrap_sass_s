@@ -7,18 +7,19 @@
  * @package {%= title %}
  */
 ?>
-      <hr>
 
-      <footer class="text-center">
-      	<a href="<?php echo esc_url( __( 'http://wordpress.org/', '{%= prefix %}' ) ); ?>"><?php printf( __( 'Proudly powered by %s', '{%= prefix %}' ), 'WordPress' ); ?></a>
-      	<span class="sep"> | </span>
-      	<?php printf( __( 'Theme: %1$s by %2$s.', '{%= prefix %}' ), '{%= title %}', '<a href="http://4digits.net/" rel="designer">4Digits Web Design & Development</a>' ); ?>
-      	<p>&copy; <?php bloginfo('name'); ?> <?php echo date('Y'); ?></p>
-      </footer>
-    </div> <!-- /container -->
+	</div><!-- #content -->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info">
+			<a href="<?php echo esc_url( __( 'http://wordpress.org/', '{%= prefix %}' ) ); ?>"><?php printf( __( 'Proudly powered by %s', '{%= prefix %}' ), 'WordPress' ); ?></a>
+			<span class="sep"> | </span>
+			<?php printf( __( 'Theme: %1$s by %2$s.', '{%= prefix %}' ), '{%= title %}', '<a href="http://richardgarbutt.com" rel="designer">Rich Garbutt</a>' ); ?>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
 
 <?php wp_footer(); ?>
 
 </body>
 </html>
-

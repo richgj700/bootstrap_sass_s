@@ -1,6 +1,6 @@
 {
   "name": "richgj700",
-  "title": "bootstrap_sass_s",
+  "title": "{%= title %}",
   "version": "1.0.0",
   "devDependencies": {
     "grunt": "latest",

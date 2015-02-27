@@ -25,7 +25,7 @@ function {%= prefix %}_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on {%= title %}, use a find and replace
+	 * If you're building a theme based on bootstrap_sass_s, use a find and replace
 	 * to change '{%= prefix %}' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( '{%= prefix %}', get_template_directory() . '/languages' );
@@ -34,23 +34,31 @@ function {%= prefix %}_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
+
+	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	add_theme_support( 'post-thumbnails' );
+	//add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', '{%= prefix %}' ),
 	) );
-	
+
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
 	 */
 	add_theme_support( 'html5', array(
-		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
+		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
 	) );
 
 	/*
@@ -58,10 +66,10 @@ function {%= prefix %}_setup() {
 	 * See http://codex.wordpress.org/Post_Formats
 	 */
 	add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'quote', 'link'
+		'aside', 'image', 'video', 'quote', 'link',
 	) );
 
-	// Setup the WordPress core custom background feature.
+	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( '{%= prefix %}_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
@@ -93,20 +101,14 @@ add_action( 'widgets_init', '{%= prefix %}_widgets_init' );
  */
 function {%= prefix %}_scripts() {
 	wp_enqueue_style( '{%= prefix %}-style', get_stylesheet_uri() );
-
 	/* Add Custom CSS */
-	wp_enqueue_style( 'custom-style', get_stylesheet_directory_uri() . '/public/css/custom.min.css' );
-
+	// wp_enqueue_style( 'custom-style', get_stylesheet_directory_uri() . '/public/css/custom.min.css' );
 	/* Add Bootstrap JS */
 	wp_enqueue_script( 'script-js', get_template_directory_uri() . '/public/js/script.min.js', array('jquery'), '', true );
-
 	/* Add JS for specific Bootstrap JS Calls */
 	wp_enqueue_script( 'theme-js', get_template_directory_uri() . '/public/js/theme.min.js', array('jquery', 'script-js'), '', true );
-
 	//wp_enqueue_script( '{%= prefix %}-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-
 	//wp_enqueue_script( '{%= prefix %}-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -141,21 +143,15 @@ require get_template_directory() . '/inc/jetpack.php';
 /**
  * Custom functions
  */
-
 // Add Bootstrap's IE conditional html5 shiv and respond.js to header
 function conditional_js() {
-
 	global $wp_scripts;
-
-	wp_register_script( 'html5_shiv', 'https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js', '', '', false );
-	wp_register_script( 'respond_js', 'https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js', '', '', false );
-
+	wp_register_script( 'html5_shiv', 'https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js', '', '', false );
+	wp_register_script( 'respond_js', 'https://oss.maxcdn.com/respond/1.4.2/respond.min.js', '', '', false );
 	$wp_scripts->add_data( 'html5_shiv', 'conditional', 'lt IE 9' );
 	$wp_scripts->add_data( 'respond_js', 'conditional', 'lt IE 9' );
 }
 add_action( 'wp_enqueue_scripts', 'conditional_js' );
 
-
 // Register Custom Navigation Walker
 require_once('wp_bootstrap_navwalker.php');
-

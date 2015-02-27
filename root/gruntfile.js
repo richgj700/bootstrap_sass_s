@@ -34,7 +34,7 @@ module.exports = function(grunt) {
           // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js',
           // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js',
           // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js',
-           './bower_components/jquery/dist/jquery.js',
+          // './bower_components/jquery/dist/jquery.js',
           //'./assets/js/customizer.js',
           //'./assets/js/navigation.js',
           //'./assets/js/skip-link-focus-fix.js',
@@ -51,12 +51,10 @@ module.exports = function(grunt) {
         dest: './public/js/theme.js',
       },
     },
-
     uglify: {
       options: {
         mangle: false  // Leaves function and variable names unchanged
       },
-
       script: {
         files: {
           // Minifies  script.js 
@@ -70,7 +68,6 @@ module.exports = function(grunt) {
         }
       },
     },
-
     imagemin: {
       dynamic: {
         files: [{
@@ -82,7 +79,6 @@ module.exports = function(grunt) {
         }]
       }
     },
-
     watch: {
         js_script: {
           files: [

@@ -1,5 +1,7 @@
 bootstrap_sass_s
-===========
+================
+
+Based on the excellent work by [4digits](4digits.net)
 
 >WordPress starter theme based on Underscores using Bootstrap with SASS for responsiveness, Grunt.js for automation and Bower for front end package management.
 
@@ -60,5 +62,3 @@ grunt compile
 grunt
 ```
 In order to monitor file changes in real time without manually refreshing your browser, install [LiveReload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en) for Chrome and run it in your tab.
-
-### Enjoy :)

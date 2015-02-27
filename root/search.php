@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying Search Results pages.
+ * The template for displaying search results pages.
  *
  * @package {%= title %}
  */
@@ -30,7 +30,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php {%= prefix %}_paging_nav(); ?>
+			<?php the_posts_navigation(); ?>
 
 		<?php else : ?>
 

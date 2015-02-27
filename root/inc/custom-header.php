@@ -7,16 +7,16 @@
 
 	<?php if ( get_header_image() ) : ?>
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-		<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
+		<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
 	</a>
 	<?php endif; // End header image check. ?>
 
  *
- * @package {%= title %}
+ * @package bootstrap_sass_s
  */
 
 /**
- * Setup the WordPress core custom header feature.
+ * Set up the WordPress core custom header feature.
  *
  * @uses {%= prefix %}_header_style()
  * @uses {%= prefix %}_admin_header_style()
@@ -69,7 +69,7 @@ function {%= prefix %}_header_style() {
 	?>
 		.site-title a,
 		.site-description {
-			color: #<?php echo $header_text_color; ?>;
+			color: #<?php echo esc_attr( $header_text_color ); ?>;
 		}
 	<?php endif; ?>
 	</style>
