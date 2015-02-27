@@ -1,7 +1,7 @@
 bootstrap_sass_s
 ================
 
-Based on the excellent work by [4digits](4digits.net)
+Based on the excellent work by [4digits](http://blog.4digits.net/using-underscores-with-bootstrap-less-and-grunt-js-for-wordpress-automation/)
 
 >WordPress starter theme based on Underscores using Bootstrap with SASS for responsiveness, Grunt.js for automation and Bower for front end package management.
 
