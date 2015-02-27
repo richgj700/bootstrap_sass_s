@@ -1,6 +1,6 @@
 /**
- * bootstrap_s
- * https://github.com/4digits/bootstrap_s
+ * bootstrap_sass_s
+ * https://github.com/richgj700/bootstrap_sass_s
  *
  * Licensed under the MIT License
  */
@@ -23,22 +23,22 @@ exports.warnOn = '*';
 exports.template = function (grunt, init, done) {
 	init.process({}, [
 		// Prompt for these values.
-		init.prompt('title', 'bootstrap_s'),
+		init.prompt('title', 'bootstrap_sass_s'),
 		{
 			name   : 'prefix',
 			message: 'PHP function prefix (alpha and underscore characters only)',
-			default: 'bootstrap_s'
+			default: 'bootstrap_sass_s'
 		},
 	], function( err, props ) {
 		props.keywords = [];
 		props.version = '1.0.0';
 		props.devDependencies = {
 			"grunt": "latest",
-    		"grunt-contrib-concat": "latest",
-    		"grunt-contrib-less": "latest",
-    		"grunt-contrib-uglify": "latest",
-    		"grunt-contrib-imagemin": "latest",
-    		"grunt-contrib-watch": "latest"
+  		"grunt-contrib-concat": "latest",
+  		"grunt-contrib-less": "latest",
+  		"grunt-contrib-uglify": "latest",
+  		"grunt-contrib-imagemin": "latest",
+  		"grunt-contrib-watch": "latest"
 		}; 
 
 		// Sanitize names where we need to for PHP/JS

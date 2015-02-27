@@ -1,0 +1,14 @@
+{
+  "name": "richgj700",
+  "title": "bootstrap_sass_s",
+  "version": "1.0.0",
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-compass": "^1.0.1",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-imagemin": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest"
+  },
+  "keywords": []
+}

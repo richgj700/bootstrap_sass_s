@@ -4,36 +4,37 @@ module.exports = function(grunt) {
     grunt.initConfig({
 
     // Define configuration for each task
-    less: {
-        development: {
-            options: {
-              compress: true,  // Minification
-            },
-            files: {
-              // Compile style.less into style.css
-              "./public/css/custom.min.css":"./assets/less/custom.less",
-            }
+    compass: {                  // Task 
+      development: {            // Target 
+        options: {              // Target options 
+          sassDir: 'sass',
+          cssDir: './',
+          environment: 'development',
+          outputStyle: 'compressed', //or nested or compact or compressed
+          relativeAssets: true,
+          noLineComments: true
         }
+      }
     },
-    
     concat: {
       options: {
         separator: ';',
       },
-      js_script: {
+      js_script: { // Include as required
         src: [
-          './bower_components/bootstrap/js/affix.js',
-          './bower_components/bootstrap/js/alert.js',
-          './bower_components/bootstrap/js/button.js',
-          './bower_components/bootstrap/js/carousel.js',
-          './bower_components/bootstrap/js/collapse.js',
-          './bower_components/bootstrap/js/dropdown.js',
-          './bower_components/bootstrap/js/modal.js',
-          './bower_components/bootstrap/js/popover.js',
-          './bower_components/bootstrap/js/scrollspy.js',
-          './bower_components/bootstrap/js/tab.js',
-          './bower_components/bootstrap/js/tooltip.js',
-          './bower_components/bootstrap/js/transition.js',
+          // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js',
+          // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js',
+          // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js',
+          // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js',
+          // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js',
+          // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js',
+          // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js',
+          // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js',
+          // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js',
+          // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js',
+          // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js',
+          // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js',
+           './bower_components/jquery/dist/jquery.js',
           //'./assets/js/customizer.js',
           //'./assets/js/navigation.js',
           //'./assets/js/skip-link-focus-fix.js',
@@ -103,12 +104,12 @@ module.exports = function(grunt) {
           livereload: true
           }
         },
-        less: {
+        compass: {
           // Watched files
-          files: ['./assets/less/*.less'],  
-          tasks: ['less'],
+          files: ['./sass/*.scss'],  
+          tasks: ['compass'],
           options: {
-          livereload: true
+            livereload: true
           }
         },
         images: {
@@ -131,14 +132,14 @@ module.exports = function(grunt) {
     });
 
   // Load plugins
+  grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   
   // Compile CSS and Javascript
-  grunt.registerTask('compile', ['concat', 'less', 'uglify', 'imagemin']);
+  grunt.registerTask('compile', ['concat', 'compass', 'uglify', 'imagemin']);
 
   // Set default task
   grunt.registerTask('default', ['watch']);

@@ -1,9 +1,9 @@
-bootstrap_s
+bootstrap_sass_s
 ===========
 
->WordPress starter theme based on Underscores using Bootstrap with LESS for responsiveness, Grunt.js for automation and Bower for front end package management.
+>WordPress starter theme based on Underscores using Bootstrap with SASS for responsiveness, Grunt.js for automation and Bower for front end package management.
 
-It is assumed that you already have Grunt, Bower and LESS installed on your local machine.
+It is assumed that you already have Grunt, Bower and SASS installed on your local machine.
 
 You also need `grunt-init`, which you can install globally with 
 ```
@@ -12,7 +12,7 @@ npm install -g grunt-init
 
 To clone the repository and add the template to grunt-init for automated project scaffolding run
 ```
-git clone git@github.com:4Digits/bootstrap_s.git ~/.grunt-init/bootstrap_s
+git clone git@github.com:richgj700/bootstrap_sass_s.git ~/.grunt-init/bootstrap_sass_s
 ```
 
 
@@ -28,7 +28,7 @@ and create a new, empty theme folder.
 ### 1. Generate the template files in your empty theme folder
 
 ```
-grunt-init bootstrap_s
+grunt-init bootstrap_sass_s
 ```
 You should give your theme a title and function-prefix (e.g. MyTheme / mytheme).
 
