@@ -34,7 +34,7 @@ module.exports = function(grunt) {
           // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js',
           // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js',
           // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js',
-          // './bower_components/jquery/dist/jquery.js',
+          './bower_components/jquery/dist/jquery.js',
           //'./assets/js/customizer.js',
           //'./assets/js/navigation.js',
           //'./assets/js/skip-link-focus-fix.js',
