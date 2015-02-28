@@ -102,7 +102,7 @@ module.exports = function(grunt) {
         },
         compass: {
           // Watched files
-          files: ['./sass/*.scss'],  
+          files: ['**/*.scss'],  
           tasks: ['compass'],
           options: {
             livereload: true
