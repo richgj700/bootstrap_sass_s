@@ -20,8 +20,11 @@ module.exports = function(grunt) {
       options: {
         separator: ';',
       },
-      js_script: { // Include as required
+      js_script: {
         src: [
+          './bower_components/jquery/dist/jquery.js',
+          './bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
+          // Include Bootstrap components as required
           // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js',
           // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js',
           // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js',
@@ -34,7 +37,7 @@ module.exports = function(grunt) {
           // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js',
           // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js',
           // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js',
-          './bower_components/jquery/dist/jquery.js',
+          
           //'./assets/js/customizer.js',
           //'./assets/js/navigation.js',
           //'./assets/js/skip-link-focus-fix.js',
